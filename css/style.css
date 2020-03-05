@@ -2,7 +2,7 @@ h1{
     font-size: 30px;
     color: rgb(230, 199, 26);
 }
-.list__list-text{
+.list-text{
     border: 1px solid #e0cc10;
     width: 25vw;
     min-height: 25vh;
