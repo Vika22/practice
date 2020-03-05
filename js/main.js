@@ -5,7 +5,6 @@ let counter = 0;
 button.onclick = function () {
     if (input.value != 0) {
 
-
         counter++;
         text = document.createElement("p");
         text.classList.add("par");
@@ -52,6 +51,3 @@ button.onclick = function () {
     }
 
 };
-
-
-
