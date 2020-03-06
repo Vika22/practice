@@ -1,11 +1,21 @@
-.cont{
+h1{
+    font-size: 30px;
+    color: rgb(230, 199, 26);
+}
+.list-text{
+    border: 1px solid #e0cc10;
+    width: 25vw;
+    min-height: 25vh;
+    margin: 0 auto;
+    padding: 0.5%;
+}
+.center{
     text-align: center;
 }
-ol{
-    display: table;
-    margin: 20px auto;
+input{
+  margin: 2%;  
 }
-li,
-button{
-    margin: 10px;
+.button{
+  
+   margin: 0 auto;
 }
