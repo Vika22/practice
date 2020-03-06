@@ -6,6 +6,16 @@ h1{
     border: 1px solid #e0cc10;
     width: 25vw;
     min-height: 25vh;
-    margin-bottom: 2%;
+    margin: 0 auto;
     padding: 0.5%;
+}
+ol li{
+   margin-left: 50px ; 
+   text-align: start;
+}
+.center{
+    text-align: center;
+}
+input{
+  margin: 2%;  
 }
