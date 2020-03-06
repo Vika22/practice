@@ -14,7 +14,7 @@ button.addEventListener("click", function(){
         let list = document.createElement("li");
         text.appendChild(list);
 
-        var someList = document.createElement("p");
+        let someList = document.createElement("span");
         someList.innerHTML = input.value;
         someList.classList.add('someList');
         list.appendChild(someList);
@@ -39,6 +39,7 @@ button.addEventListener("click", function(){
             text.removeChild(list);
         }
     }
+    
     function Edit() {
         edit = list.querySelector('button.edit');
         edit.onclick = function () {
@@ -47,12 +48,15 @@ button.addEventListener("click", function(){
             let editInput = document.createElement("input");
             editInput.type = "text";
             list.appendChild(editInput);
-            someList = list.querySelector('p.someList');
+            someList = list.querySelector('span.someList');
             editInput.value = someList.innerHTML;
-            editInput.addEventListener('change', updateValue);
-            function updateValue() {
-                someList.innerHTML = this.value;
+            let save = document.createElement("button");
+            save.innerHTML = "Save";
+            list.appendChild(save);
+            save.onclick = function () {
+                someList.innerHTML = editInput.value;
                 editInput.remove();
+                save.remove();
             }
         }
     };
