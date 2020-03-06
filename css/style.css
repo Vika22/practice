@@ -9,13 +9,13 @@ h1{
     margin: 0 auto;
     padding: 0.5%;
 }
+ol li{
+   margin-left: 50px ; 
+   text-align: start;
+}
 .center{
     text-align: center;
 }
 input{
   margin: 2%;  
-}
-.button{
-  
-   margin: 0 auto;
 }
