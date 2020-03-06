@@ -38,7 +38,7 @@ button.addEventListener("click", function(){
             list = this.parentNode;
             text.removeChild(list);
         }
-    }
+    };
     
     function Edit() {
         edit = list.querySelector('button.edit');
