@@ -65,22 +65,3 @@ function Edit() {
         }
     }
 };
-function Check() {
-    someList = list.querySelector('span.someList');
-    someList.addEventListener("click", function () {
-        someList = this;
-        list = this.parentNode;
-        
-    })
-};
-
-
-
-
-
-// var list = document.querySelector('ol');
-// someList.addEventListener('click', function(ev) {
-//   if (ev.target.tagName === 'LI') {
-//      ev.target.classList.toggle('done'); 
-//   }
-// }, false);
