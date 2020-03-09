@@ -6,7 +6,6 @@ button.addEventListener("click", function () {
         list = Add();
         Delete();
         Edit();
-        Check();
         input.value = '';
     }
 });
