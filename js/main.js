@@ -6,17 +6,20 @@ button.addEventListener("click", function () {
         list = Add();
         Delete();
         Edit();
+        Check();
         input.value = '';
     }
 });
 function Add() {
+
     let list = document.createElement("li");
+    list.classList.add('text-left');
     text.appendChild(list);
     let checkbox = document.createElement("input");
     checkbox.classList.add('checkbox');
     checkbox.type = "checkbox";
     list.appendChild(checkbox);
-    let someList = document.createElement("span");
+    let someList = document.createElement("label");
     someList.classList.add('someList');
     someList.innerHTML = input.value;
     someList.classList.add('someList');
@@ -53,7 +56,7 @@ function Edit() {
         let editInput = document.createElement("input");
         editInput.type = "text";
         editType.appendChild(editInput);
-        someList = list.querySelector('span.someList');
+        someList = list.querySelector('label.someList');
         editInput.value = someList.innerHTML;
         let save = document.createElement("button");
         save.innerHTML = "Save";
@@ -63,4 +66,22 @@ function Edit() {
             editType.remove();
         }
     }
+};
+function Check() {
+    someList = list.querySelector('label.someList');
+    let isChecked = false;
+    someList.addEventListener("click", function (ev) {
+        someList = this;
+        list = this.parentNode;
+        if (isChecked === false){
+            checkbox = list.querySelector('input.checkbox');
+            checkbox.setAttribute("checked", "checked");
+            someList.style.textDecoration = "line-through";
+            isChecked = true;
+        }else{
+            isChecked = false;
+            someList.style.textDecoration = "none";
+            checkbox.removeAttribute("checked");
+        }
+    })
 };
