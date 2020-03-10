@@ -12,10 +12,14 @@
 <body class="d-flex align-items-stretch bg-danger">
     <div class="container">
         <div class="row justify-content-center h-100 ">
-            <div class="col-lg-7 text-center bg-warning rounded-circle">
-                <h1 class="mt-5 text-info">TO-DO list</h1>
-                <input type="text" placeholder="Text" id="myInput" class="input-text bg-info border-light text-light">
-                <input type="button" value="Go" class="input-button mb-3 bg-info border-light text-light">
+            <div class="col-lg-7 text-center bg-warning rounded-pill">
+                <h1 class="mt-5 text-info font-weight-bold">TO-DO list</h1>
+                 <div class="input-group mb-3 form-inline d-inline-flex w-75">
+                    <input type="text" placeholder="Text" id="myInput" class="input-text form-control">
+                    <div class="input-group-append">
+                        <input type="button" value="Go" aria-pressed="true" class="input-button btn btn-outline-info active">
+                    </div>
+                </div>
                 <ol class="list-text ml-3 text-center">
                 </ol>
             </div>
