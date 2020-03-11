@@ -5,30 +5,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To do list</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="d-flex align-items-stretch bg-danger">
-    <div class="container">
+<body class="d-flex align-items-stretch ">
+    <div class="container" id="todo-list">
         <div class="row justify-content-center h-100 ">
-            <div class="col-lg-7 text-center bg-warning rounded-pill">
-                <h1 class="mt-5 text-info font-weight-bold">TO-DO list</h1>
-                 <div class="input-group mb-3 form-inline d-inline-flex w-75">
-                    <input type="text" placeholder="Text" id="myInput" class="input-text form-control">
+            <div class="col-lg-7 text-center">
+                <h1 class="mt-5 text-info font-weight-bold">{{ title }}</h1>
+
+                <div class="input-group mb-3 form-inline d-inline-flex w-75">
+                    <input type="text" v-model="newTodoText" v-on:keyup.enter="addTodo" placeholder="Text"
+                        class="form-control">
                     <div class="input-group-append">
-                        <input type="button" value="Go" aria-pressed="true" class="input-button btn btn-outline-info active">
+                        <input type="button" @click="addTodo" value="Go" class="btn btn-outline-info active">
                     </div>
                 </div>
-                <ol class="list-text ml-3 text-center">
-                </ol>
+
+                <ul class="list-text ml-3 text-center">
+                    <li v-for="(todo, index) in todos" :key="todo.id"
+                        class="text-left text-light d-flex border-bottom border-light mr-5 mb-2">
+                        <div class="custom-control custom-checkbox" :class="{ 'done': todo.checked }">
+                            <input class="checkbox custom-control-input" v-model="todo.checked"
+                                id="customControlAutosizing" type="checkbox">
+                            <label class="text-info mt-2 custom-control-label" for="customControlAutosizing">
+                                {{todo.title}}</label>
+                        </div>
+                        <button @click="editTodo" class="edit ml-2 mb-2 btn btn-outline-info active">Edit</button>
+                        <button @click="deleteTodo" v-on:click="todos.splice(index, 1)"
+                            class="delete ml-2 mb-2 close btn btn-info">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
 
+
+
+
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
