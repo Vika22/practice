@@ -33,9 +33,8 @@
                             <label class="text-info mt-2 custom-control-label" for="customControlAutosizing">
                                 {{todo.title}}</label>
                         </div>
-                        <button @click="editTodo" class="edit ml-2 mb-2 btn btn-outline-info active">Edit</button>
-                        <button @click="deleteTodo" v-on:click="todos.splice(index, 1)"
-                            class="delete ml-2 mb-2 close btn btn-info">
+                        <button class="edit ml-2 mb-2 btn btn-outline-info active">Edit</button>
+                        <button @click="todos.splice(index, 1)" class="delete ml-2 mb-2 close btn btn-info">
                             <span aria-hidden="true">×</span>
                         </button>
                     </li>

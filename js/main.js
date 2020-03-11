@@ -20,16 +20,6 @@ var app17 = new Vue({
                 checked: false
             })
             this.newTodoText = ''
-        },
-
-        editTodo: function () {
-            this.todos.push({
-                id: this.nextTodoId++,
-                title: this.newTodoText
-            })
-        },
-        deleteTodo: function () {
-            this.todos.splice(this.nextTodoId, 1);
         }
     }
 })
