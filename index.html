@@ -10,12 +10,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="d-flex align-items-stretch ">
+<body class="d-flex align-items-stretch bg-danger ">
     <div class="container" id="todo-list">
         <div class="row justify-content-center h-100 ">
-            <div class="col-lg-7 text-center">
+            <div class="col-lg-9 text-center">
                 <h1 class="mt-5 text-info font-weight-bold">{{ title }}</h1>
-
                 <div class="input-group mb-3 form-inline d-inline-flex w-75">
                     <input type="text" v-model="newTodoText" v-on:keyup.enter="addTodo" placeholder="Text"
                         class="form-control">
@@ -23,21 +22,8 @@
                         <input type="button" @click="addTodo" value="Go" class="btn btn-outline-info active">
                     </div>
                 </div>
-
                 <ul class="list-text ml-3 text-center">
-                    <li v-for="(todo, index) in todos" :key="todo.id"
-                        class="text-left text-light d-flex border-bottom border-light mr-5 mb-2">
-                        <div class="custom-control custom-checkbox" :class="{ 'done': todo.checked }">
-                            <input class="checkbox custom-control-input" v-model="todo.checked"
-                                id="customControlAutosizing" type="checkbox">
-                            <label class="text-info mt-2 custom-control-label" for="customControlAutosizing">
-                                {{todo.title}}</label>
-                        </div>
-                        <button class="edit ml-2 mb-2 btn btn-outline-info active">Edit</button>
-                        <button @click="todos.splice(index, 1)" class="delete ml-2 mb-2 close btn btn-info">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </li>
+                    <task v-for="(todo, index) in todos" :key="todo.id" @on-delete="deleteTodo (index)" :task-item="todo"></task>
                 </ul>
             </div>
         </div>
